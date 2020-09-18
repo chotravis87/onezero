@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Anniversary</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+		<link rel="stylesheet" href="{% static 'anniversary/css/main.css'%}" />
+		<noscript><link rel="stylesheet" href="{% static 'anniversary/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/"><strong>Onezero</strong> by wendy yoon and travis cho</a></h1>
+						<nav>
+							<ul>
+								<li><a href="#footer">Add</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+				{% include "anniversary/main.html" %}
+
+				<!-- Footer -->
+				{% include "anniversary/footer.html" %}
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'anniversary/js/jquery.min.js' %}"></script>
+			<script src="{% static 'anniversary/js/jquery.poptrox.min.js' %}"></script>
+			<script src="{% static 'anniversary/js/browser.min.js' %}"></script>
+			<script src="{% static 'anniversary/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'anniversary/js/util.js' %}"></script>
+			<script src="{% static 'anniversary/js/main.js' %}"></script>
+	</body>
+</html>

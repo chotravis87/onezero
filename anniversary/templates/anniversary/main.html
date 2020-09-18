@@ -1,0 +1,8 @@
+<div id="main">
+    {% for a in anniversary %}
+    <article class="thumb">
+        <a href="{{ a.url }}" class="image"><img class="thumbs" src="{{ a.thumbnail }}" alt="" /></a>
+        <h2>{{ a.location }}/{{ a.name }}</h2>
+    </article>
+    {% endfor %}
+</div>

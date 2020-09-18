@@ -1,0 +1,11 @@
+#Unused
+*.DS_Store
+
+#Database
+db.sqlite3
+
+#Cache
+*__pycache__*
+
+#staticfiles
+staticfiles

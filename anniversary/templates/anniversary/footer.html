@@ -1,0 +1,55 @@
+<footer id="footer" class="panel">
+    <div class="inner split">
+        <div>
+            <section>
+                <h2>기념일 추가하기</h2>
+                <form method="POST" action="">
+                {% csrf_token %}
+                    <div class="fields">
+                        <input type="hidden" name="type" value="add">
+                        <div class="field half">
+                            <input type="datetime-local" name="datetime" id="Datetime" placeholder="Datetime" />
+                        </div>
+                        <div class="field half">
+                            <input type="url" name="url" id="url" placeholder="Video URL" />
+                        </div>
+                        <div class="field half">
+                            <input type="text" name="location" id="location" placeholder="Location" />
+                        </div>
+                        <div class="field half">
+                            <input type="text" name="name" id="name" placeholder="Name" />
+                        </div>
+                    </div>
+                    <ul class="actions">
+                        <li><input type="submit" value="Upload" class="primary" /></li>
+                        <li><input type="reset" value="Reset" /></li>
+                    </ul>
+                </form>
+            </section>
+        </div>
+        <div>
+            <section>
+                <h2>기념일 삭제하기</h2>
+                <form method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="type" value="delete">
+                <select id="" name="id">
+                {% for event in anniversary %}
+                    <option value="{{ event.url }}">{{ event.name }}</option>
+                {% endfor %}
+                </select>
+                <input type="submit" value="Delete" class="primary" />
+                </form>
+            </section>
+            <section>
+                <h2>Franchise</h2>
+                <ul class="icons">
+                    {% comment %} <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li> {% endcomment %}
+                </ul>
+            </section>
+            <p class="copyright">
+                &copy; HTML5 UP Design: <a href="https://onezero.space">Onezero</a>.
+            </p>
+        </div>
+    </div>
+</footer>

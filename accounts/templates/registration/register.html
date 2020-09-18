@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'registration/img/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'registration/css/register.css' %}" />
+    <title>Onezero - Login</title>
+</head>
+<body>
+    <h1>ONEZERO</h1>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form method="POST">
+                {% csrf_token %}
+                <h1>Register</h1>
+                <input type="username" placeholder="Username" name="username" required="required"/>
+                <input type="password" placeholder="Password" name="password1" required="required"/>
+                <input type="password" placeholder="Confirm Password" name="password2" required="required"/>
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <p class="help">{{ error }}</p>
+                    {% endfor %}
+                {% endfor %}
+                <button style="background-color: #05E9FF; border:1px solid #05E9FF;">Sign Up</button> 
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <h1>Instructions</h1>
+                    {% for field in form %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Created<i class="fa fa-heart"></i> by
+            <a target="_blank" href="https://github.com/chotravis87/onezero">Jaeyoung Cho and Wendy Yoon</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'registration/img/favicon.ico' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'registration/css/login.css' %}" />
+    <title>Onezero - Login</title>
+</head>
+<body>
+    <h1>ONEZERO</h1>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form method="POST">
+                {% csrf_token %}
+                <h1>Sign in</h1>
+                <input type="username" placeholder="Username" name="username" required="required"/>
+                <input type="password" placeholder="Password" name="password" required="required"/>
+                {% if form.errors %}
+                <a>Wrong Username OR Password</a>
+                {% endif %}
+                <button>Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            Created<i class="fa fa-heart"></i> by
+            <a target="_blank" href="https://github.com/chotravis87/onezero">Jaeyoung Cho and Wendy Yoon</a>
+        </p>
+    </footer>
+</body>
+</html>

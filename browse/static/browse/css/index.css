@@ -1,0 +1,96 @@
+body {
+	background: #141414;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+	color: #6D6D6D;
+	opacity: 0;
+	animation: fade-in 500ms ease 200ms 1 forwards;
+}
+
+body h1 {
+	color: #fff;
+	font-size: 50px;
+}
+
+body a {
+	padding: 5px 15px;
+	color: #6D6D6D;
+	font-size: 17px;
+	text-decoration: none;
+	text-transform: uppercase;
+	border: 1px solid #6D6D6D;
+	transition: all 300ms ease;
+}
+
+body a:hover {
+	color: #EBECEC;
+	border: 1px solid #EBECEC;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+		transform: scale(1.2);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.logo {
+	width: 110px;
+	height: 30px;
+	margin: 15px 60px;
+	background: url("../img/logo.png");
+	background-size: cover;
+}
+
+.wrapper {
+	margin: 100px 0;
+	text-align: center;
+}
+
+.profile {
+	width: 150px;
+}
+
+.profile-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	max-width: 800px;
+	margin: 50px auto;
+}
+
+.profile-icon {
+	width: 150px;
+	height: 150px;
+	border: 6px solid #1f1f1f;
+	transition: all 300ms ease;
+}
+
+.profile-name {
+	margin: 20px 0;
+	line-height: 1.25em;
+	transition: all 300ms ease;
+	color: white;
+}
+
+@keyframes bg-fade {
+	0% {
+		background: #86A546;
+	}
+	40% {
+		background: #86A546;
+	}
+	45% {
+		background: #E09927;
+	}
+	55% {
+		background: #E09927;
+	}
+	60% {
+		background: #86A546;
+	}
+}

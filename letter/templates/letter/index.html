@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Letters</title>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'letter/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'letter/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+
+						<!-- Items -->
+							<div class="items">
+
+								<div class="item intro span-2">
+									<h1>Letters</h1>
+									<p>Messages Box</p>
+									<p>&copy; Reproduced from HTML5 UP</p>
+								</div>
+								{% for event in events.values %}
+								<article class="item thumb span-{{ event.design }}">
+									<h2>{{ event.name }}</h2>
+									<a href="{{ event.link }}" class="image"><img src="{{ event.image }}" alt=""></a>
+								</article>
+								{% endfor %}
+							</div>
+					</section>
+
+				<!-- Footer -->
+					<section id="footer">
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+		<script src="{% static 'letter/js/jquery.min.js' %}"></script>
+		<script src="{% static 'letter/js/browser.min.js' %}"></script>
+		<script src="{% static 'letter/js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'letter/js/util.js' %}"></script>
+		<script src="{% static 'letter/js/main.js' %}"></script>
+
+	</body>
+</html>
