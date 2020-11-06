@@ -13,7 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# from django.contrib import admin
+import os
+from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
 from . import settings
@@ -30,6 +31,11 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('maintenance/', maintenance, name="maintenance"),
 ]
+
+if os.environ.get("ADMIN") == "TRUE":
+    urlpatterns += [
+        path('admin/', admin.site.urls),
+    ]
 
 handler404 = 'onezero.views.error_404'
 handler500 = 'onezero.views.error_500'
